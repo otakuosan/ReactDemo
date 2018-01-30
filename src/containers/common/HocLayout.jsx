@@ -1,18 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const HocLayout2 = (WrappedComponent) => {
+const HocLayout = (WrappedComponent) => {
     return class extends React.Component{
         render(){
             return(
                 <div>
-                    <h1>母版22222222</h1>
+                    <h1>母版1111</h1>
+                    <header><h1>Layout Header</h1></header>
                     <main><WrappedComponent/></main>
-                    <footer>版权所有</footer>
+                    <footer><h1>Layout Footer</h1></footer>
                 </div>
             );
         }
     }
 };
 
-export default HocLayout2;
+export default HocLayout;

@@ -7,8 +7,6 @@ import NewsList from './containers/news/NewsList';
 import NewsDetail from './containers/news/NewsDetail';
 import PageNotFound from './containers/common/PageNotFound';
 
-import WithLayout from './containers/common/WithLayout';
-
 if (module.hot) {
     module.hot.accept();
 }
@@ -21,7 +19,7 @@ ReactDOM.render(
     <BrowserRouter>
         <div>
             <Switch>
-                <Route exact path="/" component={WithLayout(HomeIndex,'Layout2')}/>
+                <Route exact path="/" component={HomeIndex}/>
                 <Route path="/newslist" component={NewsList}/>
                 <Route path="/news/detail/:id" component={NewsDetail}/>
                 <Route component={PageNotFound}/>

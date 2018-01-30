@@ -1,11 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import Layout from '../common/Layout';
 
 class HomeIndex extends React.Component{
     render(){
         return(
+            <Layout>
+                <h1>Home Index</h1>
+            </Layout>
+        );
+    }
+}
+
+class HomeIndex2 extends HomeIndex{
+    render(){
+        return (
             <div>
-                <h1>Home Page</h1>
+                <h1>aaaa</h1>
+                {super.render()}
+                <h2>bbbbbb</h2>
             </div>
         );
     }
