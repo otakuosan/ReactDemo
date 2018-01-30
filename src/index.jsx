@@ -2,13 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 
-import HomeIndex from './containers/home/HomeIndex.jsx';
-import NewsList from './containers/news/NewsList.jsx';
-import PageNotFound from './containers/common/PageNotFound.jsx';
+import HomeIndex from './containers/home/HomeIndex';
+import NewsList from './containers/news/NewsList';
+import NewsDetail from './containers/news/NewsDetail';
+import PageNotFound from './containers/common/PageNotFound';
 
-import HocLayout from './containers/common/Layout.jsx';
-import HocLayout2 from './containers/common/Layout2.jsx';
-import WithLayout from './containers/common/WithLayout.jsx';
+import WithLayout from './containers/common/WithLayout';
 
 if (module.hot) {
     module.hot.accept();
@@ -22,12 +21,12 @@ ReactDOM.render(
     <BrowserRouter>
         <div>
             <Switch>
-                <Route exact path="/" component={WithLayout(HomeIndex)}></Route>
-                <Route path="/newslist" component={NewsList} ></Route>
+                <Route exact path="/" component={WithLayout(HomeIndex,'Layout2')}/>
+                <Route path="/newslist" component={NewsList}/>
+                <Route path="/news/detail/:id" component={NewsDetail}/>
                 <Route component={PageNotFound}/>
             </Switch>
-            
-            
+
             <ul>
                 <li><Link to="/">主页</Link></li>
                 <li><Link to="/newslist">新聞列表</Link></li>

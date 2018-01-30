@@ -8,8 +8,12 @@ module.exports = {
     },
 
     output: {
-        filename: '[name].bundle.js',
-        path: path.join(__dirname, '/dist')
+        path: path.join(__dirname, '/dist'),
+        filename: '[name].bundle.js'
+    },
+
+    resolve: {
+        extensions: ['.js', '.jsx']
     },
 
     module: {
@@ -34,7 +38,7 @@ module.exports = {
         // 模板插件
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: path.join(__dirname, '/src/index.tmpl.html'),
+            template: path.join(__dirname, '/src/index.tmpl.html')
         }),
 
         // 热加载插件
