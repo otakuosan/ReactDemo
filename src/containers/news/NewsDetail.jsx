@@ -4,8 +4,6 @@ import ReactDOM from 'react-dom';
 class NewsDetail extends React.Component{
     render(){
 
-        console.log(this.props);
-
         return(
             <div>
                 <h1>NewsDetail Page</h1>
