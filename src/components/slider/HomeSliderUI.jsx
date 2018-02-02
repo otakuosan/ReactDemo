@@ -1,7 +1,7 @@
 import React from 'react';
 import PathUtil from 'root/utils/PathUtil.js';
 
-class HomeSlider extends React.Component {
+class HomeSliderUI extends React.Component {
     render() {
 
         return (
@@ -19,4 +19,4 @@ class HomeSlider extends React.Component {
     }
 }
 
-export default HomeSlider;
+export default HomeSliderUI;
