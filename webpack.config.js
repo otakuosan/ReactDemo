@@ -13,13 +13,16 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx'],
+        alias: {
+            root: path.resolve(__dirname, "./src")
+        }
     },
 
     module: {
         rules: [
             {
-                test: /\.js|jsx$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: [{
                     loader: 'babel-loader',
@@ -29,6 +32,19 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
+            },
+            /*
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: 'url-loader?limit=2048'
+            },
+            */
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {}
+                }]
             }
         ]
     },
