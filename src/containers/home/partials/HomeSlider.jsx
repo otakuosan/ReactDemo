@@ -42,7 +42,7 @@ class HomeSlider extends React.Component{
     }
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
     return {
 
     };
@@ -54,5 +54,8 @@ function mapDispatchToProps(dispath){
     };
 }
 
-export default HomeSlider;
-//export default connect()(HomeSlider);
+//export default HomeSlider;
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(HomeSlider);

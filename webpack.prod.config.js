@@ -15,7 +15,7 @@ module.exports = {
 
     output: {
         path: __dirname + '/bulid',
-        filename: '/js/[name].[chunkhash:8].js'
+        filename: '/js/[username].[chunkhash:8].js'
     },
 
     resolve: {
@@ -50,8 +50,8 @@ module.exports = {
 
         //
         new webpack.optimize.CommonsChunkPlugin({
-            name:'vendors',
-            filename:'/js/[name].[chunkhash:8].js'
+            username:'vendors',
+            filename:'/js/[username].[chunkhash:8].js'
         }),
 
         // 自定义全局变量
