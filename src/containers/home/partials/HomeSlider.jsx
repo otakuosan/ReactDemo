@@ -32,7 +32,7 @@ class HomeSlider extends React.Component{
         const items = [
             { Image: 'slider-01.jpg', Title : 'iamge-01'},
             { Image: 'slider-02.jpg', Title : 'iamge-02'},
-            { Image: 'slider-04.jpg', Title : 'iamge-03'}
+            { Image: 'slider-03.jpg', Title : 'iamge-03'}
         ];
 
         this.setState({
