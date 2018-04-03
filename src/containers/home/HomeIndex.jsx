@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import HomeSlider from './partials/HomeSlider.jsx';
-import HomeTopBar from './partials/HomeTopBar.jsx';
+import HomeSearchBar from './partials/HomeSearchBar.jsx';
 
 class HomeIndex extends React.Component{
     constructor(props){
@@ -11,11 +11,11 @@ class HomeIndex extends React.Component{
     render(){
         return(
             <div>
-                <h1>首页</h1>
 
-                <HomeTopBar />
+                {/* 頂部搜索欄 */}
+                <HomeSearchBar />
 
-                {/*轮播广告图*/}
+                {/* 輪播廣告圖 */}
                 <HomeSlider />
 
             </div>
@@ -27,19 +27,4 @@ class HomeIndex extends React.Component{
     }
 }
 
-
-function mapStateToProps(state){
-    return {
-        userData : state.user
-    };
-}
-
-function mapDispatchToProps(dispath){
-    return { };
-}
-
-//export default HomeIndex;
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(HomeIndex);
+export default HomeIndex;

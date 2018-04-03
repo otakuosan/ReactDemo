@@ -1,9 +1,9 @@
-import Paths from 'root/constants/Paths.js';
+import PATHS from 'root/constants/Paths.js';
 
 const PathUtil = {
     getSliderImage: function (imgName) {
         try {
-            return require('root/' + Paths.Upload.SLIDER + imgName);
+            return require('root/' + PATHS.UPLOAD.SLIDER + imgName);
         }
         catch(e) {
             return null;

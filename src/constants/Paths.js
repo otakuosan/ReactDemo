@@ -1,7 +1,7 @@
-const Paths = {
-    Upload : {
+const PATHS = {
+    UPLOAD : {
         SLIDER : 'upload/imgs/slider/'
     }
 }
 
-export default Paths;
+export default PATHS;
