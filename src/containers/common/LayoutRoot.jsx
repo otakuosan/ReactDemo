@@ -6,7 +6,7 @@ class LayoutRoot extends React.Component{
 
         return(
             <div>
-                <main>{this.props.children}</main>
+                {this.props.children}
             </div>
         );
     }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { TabBar } from 'antd-mobile';
+import { Redirect } from 'react-router-dom';
 
 class FooterTabBar extends React.Component{
     constructor(props){
@@ -10,6 +11,8 @@ class FooterTabBar extends React.Component{
     }
 
     render(){
+        //let pageName = this.props.pageName;
+
         return (
           <div style={{ position: 'fixed', height:'100%', width: '100%', top: 0}}>
               <TabBar
@@ -18,61 +21,39 @@ class FooterTabBar extends React.Component{
                   barTintColor="white"
               >
                   <TabBar.Item
-                      title=""
+                      title="首頁"
                       key="Home"
-                      icon={<div style={{
-                          width: '22px',
-                          height: '22px',
-                          background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
-                      />
-                      }
-                      selectedIcon={<div style={{
-                          width: '22px',
-                          height: '22px',
-                          background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
-                      />
-                      }
                       selected={this.state.selectedTab === 'Home'}
                       onPress={() => {
                           this.setState({
-                              selectedTab: 'Home',
+                              selectedTab: 'Home'
                           });
                       }}
                   >
-                      <h1>首頁11111111</h1>
+                      { this.state.selectedTab === 'Home' ? <Redirect to="/" /> : null }
                   </TabBar.Item>
 
                   <TabBar.Item
-                      icon={
-                          <div style={{
-                              width: '22px',
-                              height: '22px',
-                              background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
-                          />
-                      }
-                      selectedIcon={
-                          <div style={{
-                              width: '22px',
-                              height: '22px',
-                              background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat' }}
-                          />
-                      }
-                      title="購物車"
-                      key="Koubei"
-                      selected={this.state.selectedTab === 'redTab'}
+                      title="消息"
+                      key="News"
+                      selected={this.state.selectedTab === 'News'}
                       onPress={() => {
+
                           this.setState({
-                              selectedTab: 'redTab',
+                              selectedTab: 'News'
                           });
+
                       }}
                   >
-                      <h1>口碑22222</h1>
+                      { this.state.selectedTab === 'News' ?
+                          <Redirect to="/news/list" /> : null }
                   </TabBar.Item>
 
               </TabBar>
           </div>
         );
     }
+
 }
 
 export default FooterTabBar;

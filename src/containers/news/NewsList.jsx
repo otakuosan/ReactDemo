@@ -15,26 +15,40 @@ class NewsList extends React.Component{
 
     render(){
         return(
-            <Layout1>
+            <div>
                 <h1>NewsList Page</h1>
                 <NewsItems items={this.state.items} />
-            </Layout1>
+            </div>
         );
     }
 
     componentWillMount(){
+
+        console.log('加載頁面：NewsList')
+
         var that = this;
 
-        fetch('http://localhost:3000/news')
-            .then(res => res.json())
-            .then(res => {
-                that.setState({
-                    items: res
+        try
+        {
+            /*
+            fetch('http://localhost:3000/news')
+                .then(res => res.json())
+                .then(res => {
+                    that.setState({
+                        items: res
+                    })
                 })
-            })
-            .catch(err => {
-                console.error(err);
-            });
+                .catch(err => {
+                    console.error(err);
+                });
+            */
+        }
+        catch(ex)
+        {
+
+        }
+
+
     }
 }
 

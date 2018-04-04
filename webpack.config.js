@@ -9,7 +9,7 @@ module.exports = {
 
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: '[username].bundle.js'
+        filename: '[name].bundle.js'
     },
 
     resolve: {
