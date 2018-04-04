@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import HomeSliderUI from 'root/components/slider/HomeSliderUI.jsx';
+import HomeSliderUI from 'root/components/slider/HomeSliderUI';
 
 class HomeSlider extends React.Component{
     constructor(props) {
@@ -49,9 +49,9 @@ class HomeSlider extends React.Component{
 
             setTimeout(function () {
                 itemsData = [
-                    { Image: 'slider-01.jpg', Title : 'iamge-01'},
-                    { Image: 'slider-02.jpg', Title : 'iamge-02'},
-                    { Image: 'slider-03.jpg', Title : 'iamge-03'}
+                    { Image: 'slider-01.jpg', Title : 'iamge-01', Url: 'http://www.baidu.com'},
+                    { Image: 'slider-02.jpg', Title : 'iamge-02', Url: 'http://www.qq.com'},
+                    { Image: 'slider-03.jpg', Title : 'iamge-03', Url: 'http://www.douyu.com'}
                 ];
 
                 itemsJson = JSON.stringify(itemsData);

@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import SearchBarUI from 'root/components/common/SearchBarUI';
 
 class HomeSearchBar extends React.Component{
     constructor(props) {
@@ -8,9 +8,7 @@ class HomeSearchBar extends React.Component{
 
     render(){
         return (
-            <div>
-                搜索栏
-            </div>
+            <SearchBarUI placeholder="商品搜索" />
         );
     }
 }

@@ -1,1 +1,10 @@
-.home-slider .ant-carousel .slick-slide img{ width: 100%;}
+.home-slider .slider-slide a{
+    display: block;
+    width: 100%;
+    height:220px;
+}
+
+.home-slider .slider-slide img{
+    display: block;
+    width: 100%;
+}

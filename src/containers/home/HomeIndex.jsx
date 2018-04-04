@@ -18,6 +18,8 @@ class HomeIndex extends React.Component{
                 {/* 輪播廣告圖 */}
                 <HomeSlider />
 
+                <div style={{ backgroundColor: '#AA0000', color: '#FFF', textAlign:'center'}}>aaa</div>
+
             </div>
         );
     }
