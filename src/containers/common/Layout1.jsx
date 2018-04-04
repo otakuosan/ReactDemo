@@ -4,6 +4,13 @@ import FooterTabBar from './partials/FooterTabBar';
 
 class Layout1 extends React.Component{
 
+    constructor(props){
+        super(props);
+        this.state = {
+            selectedTab : 'Home'
+        }
+    }
+
     render(){
         return(
             <LayoutRoot>

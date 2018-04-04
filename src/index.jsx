@@ -11,6 +11,7 @@ import NewsList from './containers/news/NewsList';
 import NewsDetail from './containers/news/NewsDetail';
 import PageNotFound from './containers/common/PageNotFound';
 import Layout1 from './containers/common/Layout1';
+import Layout2 from './containers/common/Layout2';
 
 if (module.hot) {
     module.hot.accept();
@@ -21,10 +22,8 @@ ReactDOM.render(
         <HashRouter>
             <Layout1>
                 <Switch>
-                    <Route exact path="/" component={HomeIndex}/>
-                    <Route path="/news/list" component={NewsList}/>
-                    <Route path="/news/detail/:id" component={NewsDetail}/>
-                    <Route component={PageNotFound}/>
+                    <Route exact path="/" component={HomeIndex} />
+                    <Route path="/news/list" component={NewsList} />
                 </Switch>
             </Layout1>
         </HashRouter>

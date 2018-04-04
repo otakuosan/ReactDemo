@@ -1,59 +1,75 @@
 import React from 'react';
 import { TabBar } from 'antd-mobile';
-import { Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-class FooterTabBar extends React.Component{
-    constructor(props){
+class FooterTabBar extends React.Component {
+
+    constructor(props) {
         super(props);
-        this.state ={
-            selectedTab: 'Home'
-        };
     }
 
-    render(){
-        //let pageName = this.props.pageName;
+    render() {
+
+        const selectedTab = this.getSelectedTab();
 
         return (
-          <div style={{ position: 'fixed', height:'100%', width: '100%', top: 0}}>
-              <TabBar
-                  unselectedTintColor="#949494"
-                  tintColor="#33A3F4"
-                  barTintColor="white"
-              >
-                  <TabBar.Item
-                      title="首頁"
-                      key="Home"
-                      selected={this.state.selectedTab === 'Home'}
-                      onPress={() => {
-                          this.setState({
-                              selectedTab: 'Home'
-                          });
-                      }}
-                  >
-                      { this.state.selectedTab === 'Home' ? <Redirect to="/" /> : null }
-                  </TabBar.Item>
+            <div style={{position: 'fixed', height: '100%', width: '100%', top: 0}}>
+                <TabBar
+                    unselectedTintColor="#949494"
+                    tintColor="#33A3F4"
+                    barTintColor="white"
+                >
+                    <TabBar.Item
+                        title="首頁"
+                        key="Home"
+                        selected={selectedTab === 'Home'}
+                        onPress={() => {
+                            this.props.history.push("/");
+                        }}
+                    >
+                        {
+                            selectedTab === 'Home'
+                                ? this.props.content
+                                : null
+                        }
+                    </TabBar.Item>
 
-                  <TabBar.Item
-                      title="消息"
-                      key="News"
-                      selected={this.state.selectedTab === 'News'}
-                      onPress={() => {
+                    <TabBar.Item
+                        title="消息"
+                        key="News"
+                        selected={selectedTab === 'News'}
+                        onPress={() => {
+                            this.props.history.push("/news/list");
+                        }}
+                    >
+                        {
+                            selectedTab === 'News'
+                                ? this.props.content
+                                : null
+                        }
+                    </TabBar.Item>
 
-                          this.setState({
-                              selectedTab: 'News'
-                          });
-
-                      }}
-                  >
-                      { this.state.selectedTab === 'News' ?
-                          <Redirect to="/news/list" /> : null }
-                  </TabBar.Item>
-
-              </TabBar>
-          </div>
+                </TabBar>
+            </div>
         );
     }
 
+    getSelectedTab(){
+        let selectedTab = null;
+        let pathName = this.props.history.location.pathname.toLowerCase();
+
+        switch (pathName) {
+            case '/news/list':
+                selectedTab = 'News';
+                break;
+
+            default:
+                selectedTab = 'Home';
+                break;
+        }
+
+        return selectedTab;
+    }
 }
 
-export default FooterTabBar;
+export default withRouter(FooterTabBar);
